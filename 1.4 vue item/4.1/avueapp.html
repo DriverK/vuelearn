@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{title}}</div>
+			<button-counter></button-counter>
+			<div>{{newtitle}}</div>
+			<div>{{addtitle}}</div>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		Vue.component('button-counter',{
+			data () {
+				return {counter:1}
+			},
+			template:'<div><button v-on:click="counter++">clicked {{counter}} times</button></div>'
+		})
+		
+		var vm = new Vue({
+			el:"#app",
+			data:{title: 'A Vue App'},
+			computed: {
+				newtitle () {
+				return this.title.replace(' ', '');
+				},
+				addtitle () {
+					return this.title + "我是追加内容"
+				}
+			},
+			watch: {
+				// watch下的函数名称需要跟data中的属性名称保持一致
+				title (newValue, oldValue) {
+					console.log("new Value" + newValue + "....oldValue" + oldValue)
+				}
+			}
+		})
+	</script>
+</html>
