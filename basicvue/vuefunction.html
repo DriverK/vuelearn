@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.fontdiv {
+				font-size: 25px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app" class="fontdiv">
+			<div id="div1">site: {{site}}</div>
+			<div id="div2">url: {{url}}</div>
+			<div id="div3">{{detail()}}</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data: {
+				site: "菜鸟教程",
+				url:"www.runoob.com"
+			},
+			methods: {
+				detail: function () {
+					return this.site+ "-- 学的不仅是技术，更是梦想！";
+				},
+				detail2: function() {
+					return "我是第二个function啦";
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-bind调试</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style type="text/css">
+			.ccont {
+				width: 100%;
+				background-color: red;
+				
+			}
+			
+			.second {
+				background-color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			修改颜色 <input id="box" type="checkbox" v-model="use"/>
+			<br/>
+			<br/>
+			<!-- v-bind 用于绑定属性值-->
+			<div id="content" v-bind:class="['ccont',{second:use}]">v-bind:class指令</div>
+			<a v-bind:href="url">百度</a>
+			<!-- v-model 跟 v-bind:value="" 是等价的  只不过它比较专一，它是专门绑定html标签的value值-->
+			<input type="text"  v-model="hello"/>
+			
+			<input v-model="message" placeholder="edit me">
+			<p>Message is: {{ message }}</p>
+			
+			<input type="checkbox" v-model="checkVal"/>
+			<label for="checkbox">{{checkVal}}</label>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				use: false,
+				url: "http://www.baidu.com",
+				hello: "你好",
+				message:"haha",
+				checkVal: false
+			}
+		})
+	</script>
+</html>

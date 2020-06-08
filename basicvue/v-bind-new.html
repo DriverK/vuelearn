@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<style>
+		.classa{
+			text-decoration: none;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<!-- v-on:click的简写版本 @click-->
+			<a v-bind:href="url" v-bind:class="[{classa:isclassa}]" v-on:click="doSomething">百度</a>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:"#app",
+			data: {
+				url:"http://www.baidu.com",
+				isclassa: true
+			},
+			methods: {
+				doSomething: function(obj,dff) {
+					console.log(obj)
+					console.log("just dosomething")
+				}
+			}
+		})
+	</script>
+</html>

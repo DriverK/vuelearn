@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hello output</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div id="div1">site: {{site}}</div>
+			<div id="div2">url: {{url}}</div>
+			<div id="div3">Alexa: {{alexa}}</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var data = {site:"菜鸟教程", url:"www.runoob.com",alexa: 1000};
+		var vm = new Vue({
+			el: "#app",
+			data: data
+		});
+		// document.write(vm.site === data.site);
+		// document.write("</br>")
+		// data.site="Runoob";
+		// document.write(data.site + "</br>");
+		// document.write(data.alexa);
+		// document.w
+		
+		// document.wirte(vm.$children.prototype);
+		
+		// document.write("<h1>hello world</h1>");
+	</script>
+</html>
