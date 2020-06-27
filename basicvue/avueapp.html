@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{title}}</h1>
+			<button-counter></button-counter>
+		</div>
+		
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		Vue.component('button-counter',{
+			data () {
+				return {
+					counter: 1
+				}
+			},
+			template:'<button @click="counter++">clicked {{counter}} times</button>'
+		})
+		
+		let vm = new Vue({
+			el: "#app",
+			data() {
+				return {
+					titile: 'A Vue App'
+				}
+			}
+		})
+	</script>
+</html>
