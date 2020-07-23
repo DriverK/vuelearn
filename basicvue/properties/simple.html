@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<color-text text="Hello World"></color-text>
+			<br>
+			<color-text></color-text>
+			<br>
+			
+			<color-text color="#f78" text="Hello World"></color-text>
+			<br>
+			<color-text color="#43dt" text="Hello World"></color-text>
+		</div>
+		
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+	<script type="text/javascript">
+		Vue.component('color-text', {
+			props: {
+				text: String,
+				color: {
+					type: String,
+					default: '#000',
+					required: true,
+					validator (value) {
+						return /^#([0-9a-fA-F]{6}[0-9a-fA-F]{3})$/.test(value)
+						}
+					}
+				},
+				template: '<span :style="{color: color}">{{ text }}</span>'
+		})
+		
+		let vm = new Vue({
+			el: '#app'
+		})
+	</script>
+</html>

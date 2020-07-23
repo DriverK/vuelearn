@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1></h1>
+			<button-counter></button-counter>
+		</div>
+	</body>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component("button-counter", {// 创建一个Vue组件
+				data() {
+					return {
+						counter: 1
+					}
+				},
+				template : '<buttont @click=counter++>clicked {{counter}} times</button>'
+			})
+			
+			// 挂载组件到app
+			// let vm = new Vue({
+			// 	el: '#app',
+				// data 对象
+			// 	data: { // 对象类型
+			// 		title : 'A Vue app'
+			// 	}
+			// })
+			
+			// 创建组件app 2
+			new Vue({
+				el: '#app',
+				// data 函数
+				data() {
+					return {
+						title: 'A Vue app'
+					}
+				}
+			})
+			
+		</script>
+</html>

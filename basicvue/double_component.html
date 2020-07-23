@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id= "app">
+			<button-counter></button-counter>
+			<button-counter></button-counter>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		// let jack= {
+		// 	counter: 0
+		// }
+		Vue.component('button-counter', {
+		data() {
+			return {
+				counter: 0
+			}
+		},
+		template: "<button @click='counter++'> click {{counter}} times</button>"
+		})
+		let vm = new Vue({
+			el: "#app"
+		})
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		let store1 = {
+			msg: 'Hello World',
+			logMsg: function() {
+				console.log('------------匿名函数------------\n', this)
+			}
+		}
+		
+		store1.logMsg()
+		
+		// 代码2 
+		let store2 = {
+			msg: 'Hello World',
+			logMsg: () => {
+				console.log('------------------箭头函数---------------\n', this)
+				console.log(this.msg)
+			}
+		}
+		store2.logMsg()
+	</script>
+</html>

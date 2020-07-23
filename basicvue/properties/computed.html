@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app" style="font-family: Roboto, sans-serif; color: rgb(84,92,100);
+		margin-left:100px">
+		<h2>英语中的"互文"</h2>
+		<p>我们先来看三句话</p>
+		<p>{{message}} .&nbsp;&nbsp;我们看到的是车还是猫</p>
+		<p>{{message.replace(/\s/g, '')}}</p>
+		<p>{{message.replace(/\s/g, '').split('').reverse().join('')}}</p>
+		<p>可以看到，{{message.replace(/\s/g, '')}} = {{message.replace(/\s/g,'').split('').reverse().join('')}}，</p>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el: '#app',
+			data() {
+				return {
+					message: 'WAS IT A CAR OR A CAT I SAW'
+				}
+			}
+		}) 
+	</script>
+</html>
